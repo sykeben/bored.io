@@ -1,12 +1,10 @@
 if (localStorage.getItem('clicky.count') == null) localStorage.setItem('clicky.count', '0')
+var count = localStorage.getItem('clicky.count')
 
-function countUp() {
-    localStorage.setItem('clicky.count', (parseInt(localStorage.getItem('clicky.count'))+1).toString())
-    update()
-}
+function autoSave() { localStorage.setItem('clicky.count', count.toString()); setTimeout(autoSave, 100) }
 
-function update() {
-    $('#count').text(localStorage.getItem('clicky.count'))
-}
+function countUp() { count++; update() }
 
-window.onload = update()
+function update() { $('#count').text(count) }
+
+window.onload = function() { update(); autoSave() }
