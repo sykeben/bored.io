@@ -1,0 +1,4 @@
+.col-link:hover {
+    cursor: pointer;
+    filter: brightness(1.01) saturate(1.01);
+}
