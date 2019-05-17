@@ -1,4 +1,4 @@
-if (typeof localStorage.getItem('clicky.count') === undefined) localStorage.setItem('clicky.count', '0')
+if (localStorage.getItem('clicky.count') == null) localStorage.setItem('clicky.count', '0')
 
 function countUp() {
     localStorage.setItem('clicky.count', (parseInt(localStorage.getItem('clicky.count'))+1).toString())
